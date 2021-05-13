@@ -9,8 +9,8 @@ console.log('Sample JavaScript #3 HW #17');
  * если нет – то счет продолжается
  */
 
-  var counter = (function () {
-  var count = 0;
+  let counter = (function () {
+  let count = 0;
 
     return function (num) {
       count = num === undefined ? count : num;
@@ -46,8 +46,8 @@ console.log(counter()); // 1
  * counting.decrement() – уменьшает значение счетчика на 1
  */
 
-  var counting = (function () {
-  var count = 0;
+  let counting = (function () {
+  let count = 0;
 
   return {
     value(num) {
@@ -105,9 +105,9 @@ console.log(counting.value()); // 201
  * console.log(myPow(2, 3, myPrint)); // 2^3=8
  */
 
-  var myPrint = (a, b, res) => `${a}^${b}=${res}`;
-  var myPow = (a, b, callback) => {
-    var pow = (x, n) => {
+  let myPrint = (a, b, res) => `${a}^${b}=${res}`;
+  let myPow = (a, b, callback) => {
+    let pow = (x, n) => {
       if (n !== 1) return x *= pow(x, n - 1);
 
       return x;
@@ -154,8 +154,8 @@ console.log(myPow(2, 3, myPrint)); // 2^3=8
   return `${this.name} ${this.model}, ${this.engine}cc, year ${this.year}, ${this.used}`;
 }
 
-var yearNow = new Date().getFullYear(); // получить текущий год как число
-var car = {
+let yearNow = new Date().getFullYear(); // получить текущий год как число
+let car = {
   engine: 2000,
   model: 'Lacetti',
   name: 'Chevrolet',
@@ -168,7 +168,7 @@ var car = {
     if (value === 'new' && this.year < yearNow) this.year = yearNow;
   }
 };
-var car2 = {
+let car2 = {
   engine: 5000,
   model: 'FX50 AWD',
   name: 'Infinite',
@@ -205,8 +205,8 @@ console.log(car2.info()); // Infinite FX50 AWD, 5000cc, year 2019, new -- изм
  * В реализации функции должен быть применен метод Math.max() и apply().
  */
 
-var list = [12, 23, 100, 34, 56, 9, 233];
-var myMax = (arg) => Math.max.apply(Math, arg);
+let list = [12, 23, 100, 34, 56, 9, 233];
+let myMax = (arg) => Math.max.apply(Math, arg);
 
 console.log(myMax(list));
 
@@ -226,7 +226,7 @@ console.log(myMax(list));
  * Функция возвращает результат вычисления.
  */
 
-var myDouble = myMul.bind(null, 2);
+let myDouble = myMul.bind(null, 2);
 
 console.log(myDouble(3)); // = myMul(2, 3) = 6
 
@@ -236,7 +236,7 @@ console.log(myDouble(5)); // = myMul(2, 5) = 10
 
 // аналогичным образом создайте функцию myTriple(n), которая утраивает принимающий параметр, возвращая результат.
 
-var myTriple = myMul.bind(null, 3);
+let myTriple = myMul.bind(null, 3);
 
 console.log(myTriple(3)); // = myMul(3, 3) = 9
 
@@ -257,8 +257,8 @@ console.log(myTriple(5)); // = myMul(3, 5) = 15
 let notUniqNums = [1, 1, 2, 3, 4, 5, 6, 7];
 let notUniqStrings = ['Bob', 'Kate', 'Jhon', 'Tom', 'Jhon', 'Kate', 'Tom', 'Bob', 'Jhon', 'Tom'];
 
-  var myUniq = (arr) => {
-  var set = new Set();
+  let myUniq = (arr) => {
+  let set = new Set();
 
   arr.forEach((val) => {
     set.add(val);
